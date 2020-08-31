@@ -1,0 +1,26 @@
+.nav-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: #ff4a7c;
+  align-items: center;
+  justify-content: left;
+  height: calc(40px + 5vh);
+}
+.nav-logo a {
+  font-size: calc(15px + 1vw);
+  margin-left: 50px;
+  color: white;
+  text-decoration: none;
+}
+.nav-container ul {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.nav-container ul li {
+  list-style-type: none;
+  font-size: calc(10px + 0.75vw);
+}
