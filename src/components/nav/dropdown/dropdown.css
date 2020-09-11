@@ -1,0 +1,114 @@
+@keyframes right-to-left {
+  0% {
+    visibility: visible;
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes left-to-right {
+  0% {
+    visibility: visible;
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes top-to-down {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes down-to-top {
+  0% {
+    visibility: visible;
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+.DropDown {
+  border-top: white 1px solid;
+  height: calc(30px + 5vh);
+  width: 100%;
+  background-color: #ff4a7c;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+  visibility: hidden;
+}
+.DropDown div,
+.DropDown ul {
+  height: inherit;
+  width: 100%;
+  background-color: #ff4a7c;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  transition: all 0.5s ease;
+}
+.DropDown form {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+.show {
+  visibility: visible;
+  animation: right-to-left 1s ease;
+}
+.hide {
+  visibility: hidden;
+  animation: left-to-right 1s ease;
+  transform: translateX(0%);
+}
+.fade-out {
+  opacity: 0;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fade-in {
+  animation: fade-in ease 0.5s;
+}
+.underline {
+  text-decoration: underline;
+}
+.combined {
+  width: 30%;
+}
+@media screen and (orientation: portrait) {
+  .DropDown {
+    height: calc(100vh - (40px + 5vh));
+    background-color: #ff4a7c;
+    flex-direction: column;
+    position: absolute;
+    visibility: hidden;
+    z-index: 2;
+  }
+  .DropDown div,
+  .DropDown ul {
+    flex-direction: column;
+  }
+  .show {
+    visibility: visible;
+    animation: top-to-down 0.5s ease;
+  }
+  .hide {
+    visibility: hidden;
+    animation: down-to-top 0.5s ease;
+  }
+}

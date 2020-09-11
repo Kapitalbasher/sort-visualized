@@ -1,11 +1,5 @@
 .nav-container {
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  background-color: #ff4a7c;
-  align-items: center;
-  justify-content: left;
-  height: calc(40px + 5vh);
 }
 .nav-logo a {
   font-size: calc(15px + 1vw);
@@ -15,12 +9,56 @@
 }
 .nav-container ul {
   display: flex;
-  width: 100%;
   flex-direction: row;
+  background-color: #ff4a7c;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  height: calc(40px + 5vh);
+}
+.nav-container ul > li {
+  width: 100%;
+  text-align: center;
 }
 .nav-container ul li {
   list-style-type: none;
+}
+.nav-container button {
+  cursor: pointer;
+  background-color: inherit;
   font-size: calc(10px + 0.75vw);
+  transition: 0.5s ease-out;
+}
+.nav-container > ul li button:hover {
+  color: rgb(220, 220, 220);
+  text-decoration: underline;
+}
+/* .nav-container .sort-container {
+  width: 200px;
+  height: 60px;
+} */
+.nav-container .sort {
+  font-size: calc(15px + 0.75vw);
+}
+.nav-container .sorting {
+  font-size: calc(10px + 0.75vw);
+}
+.nav-container .sorting:hover {
+  text-decoration: none;
+  cursor: default;
+  color: white;
+}
+.nav-container .underlined {
+  text-decoration: underline;
+}
+@media screen and (orientation: portrait) {
+  .nav-container div button,
+  .nav-container div label {
+    font-size: calc(15px + 0.75vw);
+    transition: 0.5s ease-out;
+    transition-delay: 0.5s;
+  }
+
+  .nav-container button {
+    font-size: calc(13px + 0.75vw);
+  }
 }

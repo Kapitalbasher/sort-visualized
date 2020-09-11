@@ -1,0 +1,20 @@
+.info {
+  background-color: #a243e8;
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 500px;
+}
+.info p {
+  color: rgb(207, 207, 207);
+}
+.info div {
+  width: 50%;
+}
+.info .bigO {
+  margin-left: 10px;
+}
+
+.info .description {
+  justify-self: flex-end;
+}

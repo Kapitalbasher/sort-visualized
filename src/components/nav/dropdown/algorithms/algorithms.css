@@ -1,0 +1,7 @@
+.algorithms button:hover {
+  text-decoration: underline;
+}
+.algorithms .underlined {
+  text-decoration: overline !important;
+  cursor: default;
+}

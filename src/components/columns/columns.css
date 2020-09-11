@@ -1,19 +1,17 @@
 .columns-container {
   width: 100%;
-  height: 50%;
+  height: 55vh;
   display: flex;
   justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
 }
 .columns-list {
   margin-top: 20px;
   width: 80%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   transform: rotate(180deg); /* Moz and IE10+ */
   -ms-transform: rotate(180deg); /* IE9 */
   -webkit-transform: rotate(180deg); /* Opera/Chrome/Safari */
-}
-.columns-list li {
-  background-color: #814aff;
-  list-style-type: none;
 }

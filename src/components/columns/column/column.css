@@ -1,0 +1,16 @@
+.column {
+  background-color: #814aff;
+  list-style-type: none;
+}
+.selected {
+  background-color: #5d18ff;
+}
+@keyframes blink {
+  50% {
+    background-color: white;
+  }
+}
+.blink {
+  animation: blink 1.5s ease-out;
+  animation-direction: alternate-reverse;
+}
