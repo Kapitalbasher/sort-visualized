@@ -9,5 +9,6 @@
   color: white;
 }
 body {
+  overflow: hidden;
   background: linear-gradient(90deg, #e843c3, #e657ff);
 }
