@@ -26,7 +26,7 @@
   cursor: pointer;
   background-color: inherit;
   font-size: calc(10px + 0.75vw);
-  transition: 0.5s ease-out;
+  transition: 0.25s ease-out;
 }
 .nav-container > ul li button:hover {
   color: rgb(220, 220, 220);
