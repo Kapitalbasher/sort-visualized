@@ -31,3 +31,6 @@ body {
 * {
   scrollbar-color: #2a2c2e #1c1e1f;
 }
+.MuiSlider-markLabel {
+  color: white !important;
+}
