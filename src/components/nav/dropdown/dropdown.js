@@ -10,7 +10,10 @@ const DropDown = ({ currentDropDown, sort, setColumnList }) => {
   const [freezed, setFreezed] = useState(false);
   const [sliderSpeed, setSliderSpeed] = useState(sort.speed);
   const [sliderWidth, setSliderWidth] = useState(sort.width);
+  const [loop, setLoop] = useState(false);
   // const []
+  sort.loop = loop;
+  sort.freezed = freezed;
   sort.setFreezed = setFreezed;
   sort.speed = sliderSpeed;
   sort.width = sliderWidth;
@@ -46,6 +49,7 @@ const DropDown = ({ currentDropDown, sort, setColumnList }) => {
               sliderWidth={sliderWidth}
               setSliderWidth={setSliderWidth}
               classes={checkFade("settings")}
+              setLoop={setLoop}
             />
           );
         }
