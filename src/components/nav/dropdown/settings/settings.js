@@ -131,7 +131,7 @@ const Settings = (props) => {
         value="loop"
         control={
           <Checkbox
-            checked={props.loop}
+            checked={sort.loop}
             value={"loop"}
             onClick={() => {
               props.setLoop(!sort.loop);
