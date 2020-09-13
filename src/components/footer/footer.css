@@ -1,0 +1,18 @@
+.footer {
+  display: flex;
+  align-items: column;
+  width: 100%;
+  justify-content: space-around;
+  background-color: rgb(34, 34, 34);
+  padding: 20px 0;
+  list-style: none;
+}
+.footer-items {
+  color: rgb(170, 170, 170);
+  font-size: calc(10px + 0.75vw);
+}
+.footer-items * {
+  color: rgb(170, 170, 170);
+  font-size: calc(10px + 0.75vw);
+  font-weight: 300;
+}
