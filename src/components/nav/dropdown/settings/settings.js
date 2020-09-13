@@ -125,9 +125,7 @@ const Settings = (props) => {
             }
             label={<span style={{ labelSize }}>Freeze</span>}
             labelPlacement="end"
-          >
-            {" "}
-          </FormControlLabel>
+          ></FormControlLabel>
         </div>
       </div>
       <FormControlLabel

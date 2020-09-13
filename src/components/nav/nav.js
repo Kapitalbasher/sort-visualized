@@ -6,7 +6,7 @@ import { getColumns } from "./../columns/column/column.js";
 let dropChanging = false;
 const Nav = ({ columnList, columnWidth, setColumnList, sort }) => {
   const [currentDropDown, setCurrentDropDown] = useState({ menu: "", new: "" });
-  const [sorting, setSorting] = useState(false);
+  const [sorting, setSorting] = useState(sort.sorting);
   sort.array = columnList;
   sort.setSorting = setSorting;
   const updateDropDown = (menu) => {
@@ -93,13 +93,17 @@ const Nav = ({ columnList, columnWidth, setColumnList, sort }) => {
             <button
               className={sorting ? "sorting" : "sort"}
               onClick={() => {
-                if (sort.sorting === true) {
+                if (sorting === true) {
                   return;
                 }
                 if (sort.checkSorted() === true) {
                   setColumnList(getColumns(sort.width));
                 } else {
-                  sort.sort().then(() => setSorting(false));
+                  sort.sort().then(() => {
+                    if (sort.loop === false) {
+                      setSorting(false);
+                    }
+                  });
                   setSorting(true);
                 }
               }}

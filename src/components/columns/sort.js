@@ -129,14 +129,13 @@ class Sort {
   }
   abruptStop() {
     this.sorting = false;
-    this.pauseAnimations();
     this.setSorting(false);
+    this.pauseAnimations();
     this.animations = [];
   }
   stop() {
     return new Promise((resolve, reject) => {
       this.sorting = false;
-
       this.setSorting(false);
       if (this.animations.length < 1) resolve(false);
       this.animations[0].onfinish = () => {
@@ -144,22 +143,24 @@ class Sort {
       };
     });
   }
-  // high level wrapper for a switch of columns in the Columns Class
-  // animates and switches height
-
   switchSort(algorithm) {
     this.currentSort = algorithm;
   }
   endSort() {
-    this.sorting = false;
     this.sorted = true;
+    this.sorting = false;
+    if (this.loop === false) this.setSorting(false);
     for (let v of this.array) {
       v.setBlink(true);
     }
+
     setTimeout(() => {
       if (this.loop === true) {
+        this.sorting = true;
         this.setColumnList(getColumns(this.width));
         this.currentSort();
+      } else {
+        this.setSorting(false);
       }
     }, 1500);
   }
@@ -196,6 +197,7 @@ class Sort {
     array.map((val, index) => {
       randomHeight = heights[Math.floor(Math.random() * heights.length)];
       val.setHeight(randomHeight);
+      return null;
     });
   }
   insertion() {
