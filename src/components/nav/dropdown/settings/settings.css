@@ -4,6 +4,10 @@
   flex-direction: column-reverse;
 }
 /* yeah not a good practice i know.. but whatever, eh? */
+
+.Mui-disabled * {
+  color: rgb(215, 215, 215) !important;
+}
 .container-slider {
   width: 60% !important;
   display: flex !important;
@@ -13,9 +17,6 @@
   width: 30% !important;
 }
 @media screen and (orientation: portrait) {
-  .combine {
-    flex-direction: column-reverse !important;
-  }
   .container-input {
     width: 100% !important;
   }

@@ -32,10 +32,6 @@
   color: rgb(220, 220, 220);
   text-decoration: underline;
 }
-/* .nav-container .sort-container {
-  width: 200px;
-  height: 60px;
-} */
 .nav-container .sort {
   font-size: calc(15px + 0.75vw);
 }
