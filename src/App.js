@@ -12,17 +12,6 @@ let sort = new Sort();
 function App() {
   const [columnList, setColumnList] = useState(getColumns(sort.width));
   sort.setColumnList = setColumnList;
-  // new columns on resize
-  // React.useEffect(function setupListener() {
-  //   function handleResize() {
-  //     setColumnList(getColumns(columnWidth));
-  //   }
-  //   window.addEventListener("resize", handleResize);
-
-  //   return function cleanupListener() {
-  //     window.removeEventListener("resize", handleResize);
-  //   };
-  // });
   return (
     <div className="App">
       <Nav sort={sort} columnList={columnList} setColumnList={setColumnList} />
