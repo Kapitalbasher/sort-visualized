@@ -1,3 +1,4 @@
+import { getColumns } from "./column/column.js";
 (function () {
   var timeouts = [];
   var messageName = "zero-timeout-message";
@@ -70,11 +71,18 @@ class Sort {
       // this.array includes the prototype of the Column class
       let column1 = this.array[0].getColumnByIndex(this.array, c1);
       let column2 = this.array[0].getColumnByIndex(this.array, c2);
+      // if width below a certain number the freeze works with callback because the animation is not used anymore
       if (column1.width < 5) {
         window.setZeroTimeout(() => {
-          this.array[0].switch(column1, column2);
           if (this.sorting === false) return;
-          return resolve(true);
+          this.array[0].switch(column1, column2);
+          if (this.freezed) {
+            this.freezeCallback = () => {
+              resolve(true);
+            };
+          } else {
+            return resolve(true);
+          }
         });
       } else {
         var animation1 = column1._animate("left");
@@ -111,6 +119,7 @@ class Sort {
     this.sorting = false;
     this.pauseAnimations();
     this.setSorting(false);
+    this.animations = [];
   }
   stop() {
     return new Promise((resolve, reject) => {
@@ -129,6 +138,19 @@ class Sort {
   switchSort(algorithm) {
     this.currentSort = algorithm;
   }
+  endSort() {
+    this.sorting = false;
+    this.sorted = true;
+    for (let v of this.array) {
+      v.setBlink(true);
+    }
+    setTimeout(() => {
+      if (this.loop === true) {
+        this.setColumnList(getColumns(this.width));
+        this.currentSort();
+      }
+    }, 1500);
+  }
   async sort() {
     return await this.currentSort();
   }
@@ -144,11 +166,8 @@ class Sort {
         }
       }
     }
-    this.sorting = false;
-    this.sorted = true;
-    for (let v of this.array) {
-      v.setBlink(true);
-    }
+
+    this.endSort();
     return arr;
   }
 }
