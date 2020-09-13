@@ -25,6 +25,7 @@
 }
 .freeze-container,
 .freeze-container div {
+  height: auto !important;
   width: auto !important;
 }
 .stroken::after {
@@ -33,6 +34,14 @@
   width: 120%;
   height: 2px;
   position: absolute;
+}
+.stroken *::selection {
+  background: #ff4a7c;
+  color: white;
+}
+.stroken *::-moz-selection {
+  background: #ff4a7c;
+  color: white;
 }
 @media screen and (orientation: portrait) {
   .container-input {
