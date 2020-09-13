@@ -53,7 +53,7 @@ class Sort {
         bigO: " O(n^2)",
         description:
           "Insertion Sort is one of the simpler sorting algorithms. It's highly intuitive, stable, in-place, and of comparison-type.",
-        name: "insertion",
+        name: "insertion (not functioning)",
         source: "https://stackabuse.com/insertion-sort-in-javascript/",
         function: this.insertion,
       },
@@ -61,7 +61,7 @@ class Sort {
         bigO: " O(!n)",
         description:
           "In computer science, bogosort[1][2] (also known as permutation sort, stupid sort,[3] slowsort,[4] shotgun sort, random sort, monkey sort, bobosort or shuffle sort) is a highly inefficient sorting algorithm based on the generate and test paradigm.",
-        name: "bogo",
+        name: "bogo (not functioning)",
         source: "https://en.wikipedia.org/wiki/Bogosort",
         function: this.bogo,
       },
