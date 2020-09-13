@@ -6,7 +6,7 @@
   margin: 0;
   border: 0;
   padding: 0;
-  color: white;
+  color: white !important;
 }
 body {
   overflow-x: hidden;
@@ -36,4 +36,7 @@ body {
 }
 .MuiInput-underline::before {
   border-bottom: 1px solid white !important;
+}
+.MuiInput-underline::after {
+  border-bottom: 2px solid #696969 !important;
 }

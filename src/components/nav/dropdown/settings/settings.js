@@ -96,37 +96,40 @@ const Settings = (props) => {
           </div>
         </div>
       </form>
-      <FormControlLabel
-        value="Freeze"
-        control={
-          <Checkbox
-            disabled={!sort.sorting}
-            checked={props.freezed}
-            value={"Freeze"}
-            onClick={() => {
-              if (sort.sorting === false) return;
-              if (sort.animations[0] === undefined) {
-                if (sort.freezeCallback !== undefined) {
-                  sort.freezeCallback();
-                  sort.freezeCallback = undefined;
-                }
-              } else {
-                if (sort.animations[0].playState === "paused") {
-                  sort.continueAnimations();
-                } else {
-                  sort.pauseAnimations();
-                }
-              }
-              props.setFreezed(!props.freezed);
-            }}
-          />
-        }
-        label={<span style={{ labelSize }}>Freeze</span>}
-        labelPlacement="end"
-      >
-        {" "}
-      </FormControlLabel>
-
+      <div className={"freeze-container"}>
+        <div className={sort.sorting ? "" : "stroken"}>
+          <FormControlLabel
+            value="Freeze"
+            control={
+              <Checkbox
+                disabled={!sort.sorting}
+                checked={props.freezed}
+                value={"Freeze"}
+                onClick={() => {
+                  if (sort.sorting === false) return;
+                  if (sort.animations[0] === undefined) {
+                    if (sort.freezeCallback !== undefined) {
+                      sort.freezeCallback();
+                      sort.freezeCallback = undefined;
+                    }
+                  } else {
+                    if (sort.animations[0].playState === "paused") {
+                      sort.continueAnimations();
+                    } else {
+                      sort.pauseAnimations();
+                    }
+                  }
+                  props.setFreezed(!props.freezed);
+                }}
+              />
+            }
+            label={<span style={{ labelSize }}>Freeze</span>}
+            labelPlacement="end"
+          >
+            {" "}
+          </FormControlLabel>
+        </div>
+      </div>
       <FormControlLabel
         value="loop"
         control={
