@@ -41,17 +41,29 @@ class Sort {
     this.currentAlgorithmName = "bubble";
     this.algorithms = [
       {
-        bigO: "O(2n)",
+        bigO: "O(n^2)",
         description:
-          "The Bubble sort algorithm is one of the simplest sort Algorithms",
+          "Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.",
+
+        source: "https://www.geeksforgeeks.org/bubble-sort/",
         name: "bubble",
         function: this.bubble,
       },
       {
-        bigO: "O(4n)",
-        description: "Insertion sort, great sort",
+        bigO: " O(n^2)",
+        description:
+          "Insertion Sort is one of the simpler sorting algorithms. It's highly intuitive, stable, in-place, and of comparison-type.",
         name: "insertion",
-        function: this,
+        source: "https://stackabuse.com/insertion-sort-in-javascript/",
+        function: this.insertion,
+      },
+      {
+        bigO: " O(!n)",
+        description:
+          "In computer science, bogosort[1][2] (also known as permutation sort, stupid sort,[3] slowsort,[4] shotgun sort, random sort, monkey sort, bobosort or shuffle sort) is a highly inefficient sorting algorithm based on the generate and test paradigm.",
+        name: "bogo",
+        source: "https://en.wikipedia.org/wiki/Bogosort",
+        function: this.bogo,
       },
     ];
   }
@@ -169,6 +181,38 @@ class Sort {
 
     this.endSort();
     return arr;
+  }
+  bogo() {
+    let array = this.array;
+    // let heights = array.map((val) => {
+    //   return val.height;
+    // });
+    let heights = [];
+    let temp = [...array];
+    for (let i of temp) {
+      heights.push(i.height);
+    }
+    let randomHeight = 0;
+    array.map((val, index) => {
+      randomHeight = heights[Math.floor(Math.random() * heights.length)];
+      val.setHeight(randomHeight);
+    });
+  }
+  insertion() {
+    let n = this.array.length;
+    let inputArr = this.array;
+    for (let i = 1; i < n; i++) {
+      // Choosing the first element in our unsorted subarray
+      let current = inputArr[i].height;
+      // The last element of our sorted subarray
+      let j = i - 1;
+      while (j > -1 && current < inputArr[j].height) {
+        inputArr[j + 1].height = inputArr[j].height;
+        j--;
+      }
+      inputArr[j + 1].height = current;
+    }
+    return inputArr;
   }
 }
 export default Sort;
