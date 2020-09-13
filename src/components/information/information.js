@@ -16,7 +16,14 @@ const Information = ({ sort }) => {
       <div className="info">
         <div className="description">
           <h3>Description:</h3>
-          <p>{information.description}</p>
+          <i>"{information.description}"</i>
+          <a
+            href={information.source}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <u>learn more</u>
+          </a>
         </div>
         <div className="bigO">
           <h3>Big O: </h3>

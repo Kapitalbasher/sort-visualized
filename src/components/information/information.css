@@ -11,6 +11,9 @@
 .info div {
   width: 50%;
 }
+.info u {
+  margin-left: 10px;
+}
 .info .bigO {
   margin-left: 10px;
 }
