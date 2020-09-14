@@ -1,2 +1,2 @@
 ## React Sort Visualized
-This React project visualized Sort Algorithms
+This React project visualizes Sort Algorithms
